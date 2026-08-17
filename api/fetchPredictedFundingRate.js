@@ -3,10 +3,10 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const { API_KEY } = require('../config'); // Bạn nên lưu API key ở đây cho tiện quản lý
 
 const fetchPredictedFundingRate = async (symbol, retries = 3) => {
-    const now = new Date();
-    const nowTimestamp = Math.floor(now.getTime() / 1000);
-    const from = Math.floor(nowTimestamp / 3600) * 3600;
-    const to = from;
+   const nowTimestamp = Math.floor(Date.now() / 1000);
+    const currentHour = Math.floor(nowTimestamp / 3600) * 3600;
+    const from = currentHour - 3600; // 19:00
+    const to = from; 
 
     const url = "https://api.coinalyze.net/v1/predicted-funding-rate";
 

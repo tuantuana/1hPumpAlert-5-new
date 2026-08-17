@@ -6,8 +6,8 @@ const fetchAllData = require('../services/fetchAllData');
 const cron = require('node-cron');
 
 module.exports = () => {
-    cron.schedule('56 * * * *', () => {
-        console.log('⏰ [CRON] Đến phút 56 rồi, đang chạy fetchAllData...');
+    cron.schedule('1 * * * *', () => {
+        console.log('⏰ [CRON] Đến phút 1 rồi, đang chạy fetchAllData...');
         fetchAllData();
     });
 };
